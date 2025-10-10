@@ -7,7 +7,7 @@ public class Main {
         Account account = new Account();
         account.setId(1122);
         account.setBalance(20000);
-        account.setAnnualInterestRate(4.5);
+        account.setAnnualInterestRate(0.045);
         account.withdraw(2500);
         account.deposit(3000);
         System.out.println(account.getDate());
@@ -22,13 +22,11 @@ class Account {
     private int id;
     private double balance;
     private static double annualInterestRate;
-    private Date date;
+    private final Date date;
 
     //default constructor
     public Account ()
     {
-        id = 0;
-        balance = 0.0;
         date= new Date();
     }
     //constructor
@@ -36,6 +34,7 @@ class Account {
     {
         this.id = id;
         this.balance = balance;
+        date = new Date();
     }
 
     public int getId()
@@ -67,7 +66,7 @@ class Account {
     }
 
 
-    public  Date getDate()
+    public Date getDate()
     {
         return date;
     }
