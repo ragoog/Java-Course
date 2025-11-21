@@ -36,6 +36,7 @@ public class Main {
         out.close();
 
         System.out.println("\nUpdated file: ");
+
         Scanner s = new Scanner(file);
         while (s.hasNextLine()) {
             String line = s.nextLine();
